@@ -90,10 +90,10 @@ function promedioResultadosTest(resultadosTest) {
   // Tu código:
   var a = 0, r = 0;
   for (let i = 0; i < resultadosTest.length; i++) {
-    a += resultadosTest[i];
+    a = a + resultadosTest[i];
   }
-  r = a/resultadosTest.length;
-  return a
+  r = (a/resultadosTest.length);
+  return r
 }
 
 function numeroMasGrande(numeros) {
@@ -109,28 +109,16 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0
   // Si se pasa un argumento, simplemente devuélvelo
   // Tu código:
-  // var a = [];
-  // Array.from(arguments);
-
-  // var b = a[0];
-  // for (let i = 1; i < c; i++) {
-  //   b *= a[i];
-  // }
-  // return b
-  
-    var args = [], c = 0;
-    args[0] = `${arguments[0]}`;
-    c = args[0];
+  if(arguments.length == 0) return 0;
+    var args = [];
+    args [0] = arguments[0];
       for (var i = 1; i < arguments.length; i++){
-          args[i] = `${arguments[i]}`;
-          c *= args[i];
+          args[i] = arguments[i];
       }
-      Number.parseInt(c);
-      if(arguments == undefined){
-        return 0
-      }
-      return 0
+      var total = args.reduce(function(a, b){ return a * b; });
+      return total
 }
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
