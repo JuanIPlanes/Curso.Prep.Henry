@@ -38,11 +38,8 @@ function agregarStringInvertida() {
   String.prototype.reverse = function() {
     var s = this;
     var ns = '';
-    var c = s.length;
-  var b = 1;
-  for (i = s.length; i > -1; i--) {
-    ns += s.substring(`${s.length}`-b,i);
-    b++;
+    for (i = s.length; i > 0; i--) {
+    ns += s.substring(i-1,i);
     }
   return ns
   }
