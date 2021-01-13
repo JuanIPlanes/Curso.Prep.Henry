@@ -19,25 +19,20 @@
     // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
     array.forEach(function(e){
-      return e;
+      cb(e);
       });
-    array.forEach(cb);
   }
+  
 
   function map(array, cb) {
     // Crea un nuevo array
     // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
     // El nuevo array debe tener la misma longitud que el array del argumento
     var arr = [];
-    // cb = function(e){
-      // return e;
-    // };
-    function fun(elemento) {
-      return elemento;
-  }
-    cb = array.map(fun);
-  
-    arr = cb.map(fun);
+    arr = array.map(function(a){
+      return cb(a);
+    });
+    return arr;
   }
 
   // No modificar nada debajo de esta línea
