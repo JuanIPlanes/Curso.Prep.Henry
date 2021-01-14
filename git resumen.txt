@@ -1,0 +1,80 @@
+Hay varios tipos de sistemas de versionado, estos pueden ser:
+Locales, Centralizados o Distribuidos
+
+historia
+
+En 2005, la relación entre la comunidad que desarrollaba el núcleo de Linux y la compañía que desarrollaba BitKeeper se vino abajo, y la herramienta dejó de ser ofrecida gratuitamente. Esto impulsó a la comunidad de desarrollo de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta basada en algunas de las lecciones que aprendieron durante el uso de BitKeeper. Algunos de los objetivos del nuevo sistema:
+
+Velocidad
+Diseño sencillo
+Fuerte apoyo al desarrollo no lineal (miles de ramas paralelas)
+Completamente distribuido
+Capaz de manejar grandes proyectos (como el núcleo de Linux) de manera eficiente (velocidad y tamaño de los datos)
+
+
+Git modela sus datos como un conjunto de instantáneas de un mini sistema de archivos. Cada vez que confirmas un cambio, o guardas el estado de tu proyecto en Git, él básicamente hace una foto del aspecto de todos tus archivos en ese momento, y guarda una referencia a esa instantánea. Para ser eficiente, si los archivos no se han modificado, Git no almacena el archivo de nuevo, sólo un enlace al archivo anterior idéntico que ya tiene almacenado.
+La mayoría de las operaciones en Git sólo necesitan archivos y recursos locales para operar.
+
+El mecanismo que usa Git para generar esta suma de comprobación se conoce como hash SHA-1. Se trata de una cadena de 40 caracteres hexadecimales (0-9 y a-f), y se calcula en base a los contenidos del archivo o estructura de directorios.
+
+Estados
+Git tiene tres estados principales en los que se pueden encontrar tus archivos:
+
+committed: significa que los datos están almacenados de manera segura en tu base de datos local.
+modified: significa que has modificado el archivo pero todavía no lo has commiteado a tu base de datos.
+staged: significa que has marcado un archivo modificado en su versión actual para que vaya en tu próxima commiteada.
+
+
+Sabiendo esto, el flujo de trabajo básico en Git sería algo así:
+
+Modificas una serie de archivos en tu directorio de trabajo.
+Stageas los archivos, añadiendolos a tu staging area o área de preparación.
+Commiteas o Confirmas los cambios, lo que toma los archivos tal y como están en el área de preparación, y almacena esas instantáneas de manera permanente en tu directorio de Git.
+
+
+
+comandos
+
+
+ls				Lista de archivos en directorio
+cd [dir]		Moverte entre carpetas
+mkdir [namedir]	Crea carpeta
+touch [name]	crea un archivo
+rm [name]		Remueve un ARCHIVO (Permanente)
+
+archivo .gitignore	almacena el nombre/ubicacion de todos los archivos/carpetas que no deseas seguir
+
+git config --global user.email 'ej@ej.ej' 
+"						"name  'ej'
+
+git init				indica que se usara git en el proyecto (carpeta)
+
+git clone [Direccion]	clona un repositorio en el directorio actual
+
+git status				Muestra el estado de los cambios en el repo. local
+
+git add [filename]		agrega los archivos al indice local (git sigue el archivo, staged)
+
+git commit				agrega los cambios al historial de Git (Manda archivos al staging area)
+
+git push				sube todos los cambios en nuestro repo.
+
+git pull				descarga los cambios realizados que tu no hiciste
+
+git log					muestra el registro de cambios git
+
+git diff [filename]		muestra los cambios realizados en determinado archivo, o entre ramas que estan por fusionarse
+
+git branch				muestra las ramas/versiones de tu proyecto
+
+git branch [name]		crea una rama/version alternativa de tu proyecto
+
+git checkout [branchname]
+						permite moverte entre las ramas/
+versiones de tu proyecto
+
+git merge				Este comando se usa para fusionar una rama con otra rama activa
+
+git tag [tagname] [commitID-here]
+						Se usa para marcar commits 
+específicos con asas simples

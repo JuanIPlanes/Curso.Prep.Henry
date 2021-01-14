@@ -1,0 +1,119 @@
+Conce||tos Básicos:
+
+Variables
+
+Son espacios en la memoria de un dispositivo, donde se almacenan datos para su posterior utilización. Existen distintos tipos de Variables.
+Una analogía a la variable, sería un frasco. Todos almacenan algo, y estan etiquetados con el tipo de material que almacenan. 
+Tal como en los frascos puedes almacenar mermelada o alguna especia, y etiquetarlos, en la programación puedes almacenar datos (Números, Letras y demás) en sus correspondientes tipos variables.
+
+
+String
+
+Es un tipo de variable. Almacena cadenas de caracteres.
+Cuando digo de cadena de caracteres, hago referencia a que se puede almacenar cualquier tipo de caracter; sea Número, letra, caracter relacional o cualquier tipo de caracter que detecte el sistema.
+Se puede almacenar todo tipo de caracteres, como por ejemplo "-1" haciendo referencia a un número negativo. Pero no se debe utilizar como tal, dado que es interpretado como 2 caracteres, y no un tipo de dato entero negativo.
+Si el dispositivo solo trabaja con el tipo de caracteres Unicode (ej.), y la variable string no contiene caracteres Unicode, es posible que la información que se intente transmitir se reciba de forma incorrecta.
+
+
+Funciones
+
+Las funciones cumplen un papel fundamental, dado que son fragmentos de código escrito previamente, que te permiten introducirles valores (argumentos) para que los procese y devuelva datos utiles (return).
+Los datos que se le introducen, pueden provenir de variables, constantes, o directamente de entradas del usuario.
+
+Primero debe declararse:
+función nombre_función_ejemplo()
+
+Luego configurar sus acciones:
+tipo_de_dato nombre_función_ejemplo(int datoA, int datoB){
+    int resultado
+    resultado = datoA + datoB
+return resultado
+}
+
+donde datoA y datoB son las variables que opera la funcion y las cuales reciben los valores DE TIPO ENTERO que se le envian, en el orden que se fueron enviados.
+Y resultado es el dato que devuelve la funcion.
+
+Para enviarle datos a una funcion, basta con encribir el nombre de la funcion junto a los parentesis, he introducir los datos/nombre de las variables a transformar.
+
+Ejemplo:
+
+nombre_función_ejemplo(5,cualquier_variable_numerica)
+
+
+Boleanos
+
+Las variables de tipo boleano, almacenan datos boleanos. Solo pueden estar en 1 de 2 estados, o True(1), o False(0).
+
+cuando se las lee, por default estan en true.
+
+
+
+Bucle FOR
+
+Es un bucle, una funcion que se repite hasta que un acto sucede.
+Tiene un iterador (una variable que va cambiando), un condicional, y el valor al cual debe cambiar el iterador.
+mientras que el iterador no cumpla con la condicional que lo relaciona con el limite, se realizaran determinadas acciones en bucle.
+
+
+Ejemplo:
+
+for(int i;i>5;i++){
+    /*aqui van las acciones*/
+}
+
+
+Operadores Logicos
+
+&& = Realiza la operacion logica AND
+|| = Realiza la operacion logica OR
+!  = Realiza la operacion logica NOT
+
+
+Objetos
+
+
+similares a los arrays, los objetos son contenedores que guardan mucha información sobre una sola cosa.
+Estan formados por keys(identificadores) y values(valores) que se almacenan dentro del objeto.
+
+
+Propiedades
+
+Es la información que almacena un objeto, específicamente las keys.
+se puede leer, crear, modificar y eliminar el valor de las keys, y a ub objeto se le puede eliminar, llamar, añadir y leer las keys.
+
+
+Métodos
+
+Son funciones que se pueden crear dentro de un objeto.
+Se define un nombre a la key, y al value se le define una funcion.
+para llamarla, basta con usar la notación de puntos, y agregar parentesis de apertura y cierre con punto y coma al final. dentro del parentesis, se pueden pasar argumentos al metodo.
+
+ej:
+objeto.metodo();
+objeto.key<otro objeto>.metodo<key>(args);
+
+
+For In
+
+es un bucle for comun, pero tiene en él la función In que le permite iterar dentro de todas las propiedades enumerables de un objeto.
+
+
+notación de puntos vs de corchetes
+
+la notación de puntos te permite llamar una clave simplemente ingresando el nombre del objeto, un punto, y el nombre de la clave.
+objeto.clave;
+
+la notación de corchetes permite llamar cada clave, ingresando el nombre del objeto, y dentro de corchetes y comillas la clave.
+objeto['clave'];
+
+
+Prototype
+
+es una propiedad de las clases. se utiliza para no hacer uso innecesario de la memoria, dado que al crear metodos de una clase se utilizan muchos recursos del computador.
+lo que se consigue con Prototype, es que se establezca el metodo una sola vez, y que todos los objetos de una clase puedan acceder a el sin problemas.
+
+
+Constructor de Clases
+
+Un constructor de clases, permite crear clases de manera practica, a partir de una base que se hereda de un objeto padre.
+al heredar las propiedades y metodos de otro objeto, permite crear o nuevas clases que mantengan esos datos y agragar datos nuevos que no modificaran la estructura padre; y seran propias de dicha clase.
